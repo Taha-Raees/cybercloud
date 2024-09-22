@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Bell, Search, User } from 'lucide-react'; // Importing icons from react-lucide
+import { Bell, Menu, Search, User } from 'lucide-react'; // Importing icons from react-lucide
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +82,7 @@ const Navbar = () => {
           </div>
 
           <button onClick={toggleMenu} className="text-secondary">
-            {isOpen ? 'Close' : 'Menu'}
+            {isOpen ? 'Close' : <Menu/>}
           </button>
         </div>
       </div>
