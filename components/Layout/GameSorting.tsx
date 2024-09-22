@@ -49,16 +49,16 @@ const GameSorting = () => {
 
       {/* Games Display */}
       <div className="grid grid-cols-1 ml-10 md:grid-cols-2 lg:grid-cols-5 gap-6 px-4 justify-items-center">
-        {gamesToShow.map((game, index) => (
-          <div key={game.id} className="w-[270px]">
-            <GameCard
-              image={game.image}
-              title={game.title}
-              categories={game.categories}
-              trailer={game.trailer}
-            />
-          </div>
-        ))}
+      {gamesToShow.map((game) => (
+       <div key={game.id} className="w-full md:w-[220px] lg:w-[220px]">
+        <GameCard
+         image={game.image}
+         title={game.title}
+         categories={game.categories}
+         trailer={game.trailer}
+         />
+        </div>
+       ))}
       </div>
 
       {/* Show "See More" button if there are more than 10 games */}

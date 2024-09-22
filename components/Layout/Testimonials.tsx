@@ -43,7 +43,7 @@ const TestimonialsCarousel = () => {
         />
           </div>
          
-          <p className="italic mb-4">"{testimonials[activeIndex].review}"</p>
+          <p className="italic mb-4">&quot;{testimonials[activeIndex].review}&quot;</p>
           <h4 className="text-neonYellow text-xl font-semibold">{testimonials[activeIndex].name}</h4>
         </div>
 

@@ -1,12 +1,3 @@
-import React from 'react';
-import GameCard from '../ui/GameCard'; // Import GameCard component
-
-const games = [
-  { name: 'Cyberpunk Adventure', image: '/images/game1.jpg', description: 'Explore a futuristic city.' },
-  { name: 'Galaxy Wars', image: '/images/game2.jpg', description: 'Defend the universe from alien invasions.' },
-  { name: 'Neon Drive', image: '/images/game3.jpg', description: 'Race through neon-lit streets at high speed.' },
-];
-
 const HeroSection = () => {
   return (
     <>
