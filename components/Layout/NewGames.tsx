@@ -27,7 +27,6 @@ const NewGames = () => {
               <GameCard
                 image={game.image}
                 title={game.title}
-                category={game.category}
                 trailer={game.trailer}  // YouTube embed link
                 isNew={game.isNew}
               />

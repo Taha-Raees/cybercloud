@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import GameCard from '../ui/GameCard'; // Import GameCard component
-import { games } from '@/lib/data/gamesData'; // Import games data
+import { games, Game } from '@/lib/data/gamesData'; // Import games data and Game type
 
 // Function to extract unique genres
 const getUniqueGenres = (games: Game[]) => {
@@ -48,17 +48,15 @@ const GameSorting = () => {
       </div>
 
       {/* Games Display */}
-      <div className="grid grid-cols-1 ml-10 md:grid-cols-2 lg:grid-cols-5 gap-6 px-4 justify-items-center">
-      {gamesToShow.map((game) => (
-       <div key={game.id} className="w-full md:w-[220px] lg:w-[220px]">
-        <GameCard
-         image={game.image}
-         title={game.title}
-         categories={game.categories}
-         trailer={game.trailer}
-         />
-        </div>
-       ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 px-6">
+        {gamesToShow.map((game) => (
+          <GameCard
+            key={game.id}
+            image={game.image}
+            title={game.title}
+            trailer={game.trailer}
+          />
+        ))}
       </div>
 
       {/* Show "See More" button if there are more than 10 games */}
