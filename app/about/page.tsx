@@ -21,7 +21,7 @@ const about = () => {
       <div className="mt-16 py-20 " >
         <h2 className="text-4xl font-bold text-center text-accent" >Our Mission</h2>
         <p className="text-lg text-gray-400 mt-12 text-center max-w-3xl mx-auto leading-relaxed" style={{ marginTop: "25px" , padding:"0px 80px"}}>
-          Our mission is to revolutionize gaming by eliminating the hardware barrier. We provide gamers worldwide with seamless access to high-quality gaming experiences, powered by the cloud. Whether you're at home, on the go, or anywhere in between, you can immerse yourself in the best games without ever needing to download or update.
+          Our mission is to revolutionize gaming by eliminating the hardware barrier. We provide gamers worldwide with seamless access to high-quality gaming experiences, powered by the cloud. Whether you&apos;re at home, on the go, or anywhere in between, you can immerse yourself in the best games without ever needing to download or update.
         </p>
       </div>
 

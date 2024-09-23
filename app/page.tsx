@@ -1,10 +1,8 @@
 "use client"
 import CTA from "@/components/Layout/CTA";
 import Features from "@/components/Layout/Features";
-import Footer from "@/components/Layout/Footer";
 import GameSorting from "@/components/Layout/GameSorting";
 import HeroSection from "@/components/Layout/HeroSection";
-import Navbar from "@/components/Layout/Navbar";
 import NewGames from "@/components/Layout/NewGames";
 import Testimonials from "@/components/Layout/Testimonials";
 import TrendingGames from "@/components/Layout/TrendingGames";

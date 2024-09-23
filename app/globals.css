@@ -56,7 +56,7 @@ button {
 }
 
 .game-thumbnail:hover {
-  @apply transform scale-105;
+  @apply transform scale-105 w-full h-80 rounded-lg;
   
 }
 .game-info {

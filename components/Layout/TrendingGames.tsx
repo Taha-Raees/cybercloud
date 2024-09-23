@@ -20,7 +20,7 @@ const TrendingGames = () => {
         {/* Cards Container */}
         <div className="flex space-x-4">
           {trendingGames.map((game, index) => (
-            <div key={index} className="w-[270px]">
+            <div key={index} className="min-w-[270px]">
               <GameCard
                 image={game.image}
                 title={game.title}
