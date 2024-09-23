@@ -3,7 +3,7 @@ import Image from "next/image";
 const about = () => {
   return (
     <section className="bg-primary text-white min-h-screen py-16 px-8 md:px-24" style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://img.freepik.com/free-photo/futuristic-moon-background_23-2150930800.jpg?t=st=1727040888~exp=1727044488~hmac=b0f8eb6a103b33605ee8c4f85369b9e144299a4ca0ba5d999585296100f473ad&w=1060')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/bg.jpg')`,
         backgroundSize: 'cover', // Ensures the image covers the entire section
           backgroundPosition: 'center',
       }}>
