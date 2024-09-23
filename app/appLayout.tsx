@@ -1,4 +1,6 @@
 "use client";
+import Footer from "@/components/Layout/Footer";
+import Navbar from "@/components/Layout/Navbar";
 import LoadingPage from "@/components/ui/LoadingPage";
 import { useState, useEffect } from "react";
 
@@ -15,7 +17,11 @@ const ClientLoadingLayout = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   // Render the loading screen or the actual content
-  return isLoading ? <LoadingPage /> : <>{children}</>;
+  return isLoading ? <LoadingPage /> : <>
+  <Navbar/>
+  {children}
+  <Footer/>
+  </>;
 };
 
 export default ClientLoadingLayout;

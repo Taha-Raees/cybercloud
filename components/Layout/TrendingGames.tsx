@@ -7,20 +7,15 @@ const TrendingGames = () => {
   const trendingGames = games.filter(game => game.isTrending);
 
   return (
-    <section className="py-6 m-1">
-      <h2 className="ml-4 text-4xl font-bold text-accent mb-10">
+    <section className="py-6 m-3">
+      <h2 className="ml-4 text-3xl font-bold text-accent mb-5">
         Trending Games
       </h2>
 
       {/* Scrollable container */}
       <div
         className="relative flex items-center p-3 overflow-x-auto no-scrollbar"
-        style={{
-          borderImage: "linear-gradient(135deg, #0ABAB5, #FF007F) 1",
-          borderWidth: "3px",
-          borderStyle: "solid",
-          transition: "all 0.3s ease-in-out",
-        }}
+        
       >
         {/* Cards Container */}
         <div className="flex space-x-4">

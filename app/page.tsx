@@ -21,7 +21,6 @@ export default function Home() {
     </Head>
 
     <div className="min-h-screen flex flex-col justify-between">
-      <Navbar />
       <main>
         <HeroSection />
         <NewGames/>
@@ -32,8 +31,6 @@ export default function Home() {
         <Testimonials/>
         <CTA />
       </main>
-       
-      <Footer/>
     </div>
     
   </>

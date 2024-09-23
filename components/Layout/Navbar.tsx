@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation'; // Import useRouter from next/router
 import { Bell, Menu, Search, User } from 'lucide-react'; // Importing icons from react-lucide
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+  const router = useRouter(); // Initialize useRouter
   const isLoggedIn = false; // Update this based on real authentication check
 
   const toggleMenu = () => {
@@ -23,12 +23,17 @@ const Navbar = () => {
     ? [{ name: 'Account', path: '/account' }, { name: 'Sign Out', path: '/signout' }]
     : [{ name: 'Sign In', path: '/signin' }];
 
+  // Handler for navigation using router.push
+  const handleNavigation = (path: string) => {
+    router.push(path);
+  };
+
   return (
     <nav className="bg-primary py-4 px-6">
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="text-secondary text-3xl font-bold">
-          <Link href="/">CyberCloud</Link>
+        <div className="text-secondary text-3xl font-bold cursor-pointer" onClick={() => handleNavigation('/')}>
+          CyberCloud
         </div>
 
         {/* Desktop & Tablet Search Bar */}
@@ -46,10 +51,8 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden lg:flex space-x-6 items-center text-lg">
           {menuItems.map((item, index) => (
-            <li key={index}>
-              <Link href={item.path} className="hover:text-accent">
-                {item.name}
-              </Link>
+            <li key={index} className="cursor-pointer hover:text-accent" onClick={() => handleNavigation(item.path)}>
+              {item.name}
             </li>
           ))}
           {/* Profile and Notifications */}
@@ -59,11 +62,9 @@ const Navbar = () => {
               <span className="absolute top-0 right-0 h-3 w-3 bg-neonYellow rounded-full"></span> {/* Notification Badge */}
             </button>
           </li>
-          <li>
-            <Link href={authLinks[0].path} className="text-secondary hover:text-accent flex items-center space-x-1">
-              <User size={24} />
-              <span className="text-neonYellow">{authLinks[0].name}</span>
-            </Link>
+          <li className="cursor-pointer hover:text-accent flex items-center space-x-1" onClick={() => handleNavigation(authLinks[0].path)}>
+            <User size={24} />
+            <span className="text-neonYellow">{authLinks[0].name}</span>
           </li>
         </ul>
 
@@ -82,7 +83,7 @@ const Navbar = () => {
           </div>
 
           <button onClick={toggleMenu} className="text-secondary">
-            {isOpen ? 'Close' : <Menu/>}
+            {isOpen ? 'Close' : <Menu />}
           </button>
         </div>
       </div>
@@ -91,19 +92,14 @@ const Navbar = () => {
       {isOpen && (
         <ul className="flex flex-col space-y-4 mt-4 lg:hidden text-lg">
           {menuItems.map((item, index) => (
-            <li key={index}>
-              <Link href={item.path} className="hover:text-accent">
-                {item.name}
-              </Link>
+            <li key={index} className="cursor-pointer hover:text-accent" onClick={() => handleNavigation(item.path)}>
+              {item.name}
             </li>
           ))}
           {/* Mobile: Profile and Notifications */}
-         
-          <li>
-            <Link href={authLinks[0].path} className="hover:text-accent flex items-center space-x-1">
-              <User size={24} />
-              <span>{authLinks[0].name}</span>
-            </Link>
+          <li className="cursor-pointer hover:text-accent flex items-center space-x-1" onClick={() => handleNavigation(authLinks[0].path)}>
+            <User size={24} />
+            <span>{authLinks[0].name}</span>
           </li>
         </ul>
       )}
