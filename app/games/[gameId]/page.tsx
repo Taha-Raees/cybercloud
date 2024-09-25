@@ -11,8 +11,7 @@ const GameStream: React.FC = () => {
   const videoElementRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
-    const ws = new WebSocket('ws:///0.tcp.ngrok.io:15927');
-    wsRef.current = ws;
+    const ws = new WebSocket('wss://89dd-94-31-68-71.ngrok-free.app')
 
     const peer = new Peer({ initiator: false, trickle: false });
     peerRef.current = peer;
