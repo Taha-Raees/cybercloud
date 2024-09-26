@@ -6,7 +6,7 @@ import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
 import LoadingPage from "@/components/ui/LoadingPage";
 import { useState, useEffect } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { initGA, logPageView } from '@/lib/ga/index';
 
 const ClientLoadingLayout = ({ children }: { children: React.ReactNode })  => {
