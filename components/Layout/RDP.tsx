@@ -11,7 +11,7 @@ const RDP: React.FC = () => {
   const videoElementRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
-    const ws = new WebSocket('wss://9913-94-31-68-71.ngrok-free.app/ws')
+    const ws = new WebSocket('wss://7be2-20-52-104-151.ngrok-free.app/ws')
 
     const peer = new Peer({ initiator: false, trickle: false });
     peerRef.current = peer;
