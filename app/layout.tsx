@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ClientLoadingLayout from "./appLayout"; 
 import "./globals.css";
-
+import { GoogleAnalytics } from '@next/third-parties/google'
 // Metadata
 export const metadata: Metadata = {
   title: "CyberCloud - Cloud Gaming Service",
@@ -21,6 +21,7 @@ export default function RootLayout({
           {children}
         </ClientLoadingLayout>
       </body>
+      <GoogleAnalytics gaId="G-W3DNTLG0Y3" />
     </html>
   );
 }
