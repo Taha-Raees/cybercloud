@@ -7,7 +7,7 @@ const RDP: React.FC = () => {
   const [stream, setStream] = useState<MediaStream | null>(null);
   
   const peerRef = useRef<Peer | null>(null); // Correctly typed ref for Peer instance
- 
+  const [isFullScreen, setIsFullScreen] = useState(false); 
   const videoElementRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
@@ -220,18 +220,54 @@ const RDP: React.FC = () => {
     }
   }, []);
 
-  return (
-    <div style={{ width: '100%', height: '100vh', background: '#000' }}>
-      <video
-        ref={videoElementRef}
-        autoPlay
-        playsInline
-        muted
-        onError={(e) => console.error('Video element error:', e)}
-        style={{ width: '100%', height: '100%', cursor: 'none' }}
-      />
+ // Function to toggle full screen
+ const toggleFullScreen = () => {
+  const videoElement = videoElementRef.current;
+  if (videoElement) {
+    if (!document.fullscreenElement) {
+      videoElement.requestFullscreen().then(() => {
+        setIsFullScreen(true);
+      }).catch(err => {
+        console.error('Error entering full screen:', err);
+      });
+    } else {
+      document.exitFullscreen().then(() => {
+        setIsFullScreen(false);
+      }).catch(err => {
+        console.error('Error exiting full screen:', err);
+      });
+    }
+  }
+};
+
+return (
+  <div style={{ position: 'relative', width: '100%', height: '100vh', background: '#000' }}>
+    <video
+      ref={videoElementRef}
+      autoPlay
+      playsInline
+      muted
+      controls={false} // Explicitly hide video controls
+      onError={(e) => console.error('Video element error:', e)}
+      style={{ width: '100%', height: '100%', cursor: 'none' }}
+    />
+    
+    {/* Button for toggling full screen */}
+    <div style={{
+      position: 'absolute',
+      top: '10px',
+      right: '10px',
+      zIndex: 1000,
+      background: 'rgba(255, 255, 255, 0.8)',
+      padding: '10px',
+      borderRadius: '8px'
+    }}>
+      <button onClick={toggleFullScreen} style={{ padding: '5px 10px', fontSize: '14px', cursor: 'pointer' }}>
+        {isFullScreen ? 'Exit Full Screen' : 'Go Full Screen'}
+      </button>
     </div>
-  );
+  </div>
+);
 };
 
 export default RDP;
