@@ -19,7 +19,7 @@ const NewGames = () => {
         <div className="flex space-x-4">
           {newGames.map((game, index) => (
             <div key={index} className="min-w-[270px]">
-              <GameCard
+              <GameCard 
                 image={game.image}
                 title={game.title}
                 trailer={game.trailer}  // YouTube embed link

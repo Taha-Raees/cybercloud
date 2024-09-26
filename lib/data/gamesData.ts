@@ -7,7 +7,8 @@ export interface Game {
     trailer: string;  // New field for the trailer URL
     releaseDate: string; // format: YYYY-MM-DD
     isTrending: boolean;
-    isNew: boolean;  // New field for marking new games
+    isNew: boolean;
+    screenshots?: string[];   // New field for marking new games
   }
   
   export const games: Game[] = [

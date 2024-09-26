@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { slugify } from '@/components/utils/slugify'; // Import the slugify utility
 
 interface GameCardProps {
   image: string;
-  title: string;
-  category?: string;
+  title: string; 
   description?: string;
   trailer?: string;  // URL for the trailer video (YouTube embed link)
   isNew?: boolean;   // New field for marking new games
@@ -11,12 +12,21 @@ interface GameCardProps {
 
 const GameCard: React.FC<GameCardProps> = ({ image, title, description, trailer, isNew }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const router = useRouter();
+
+  const handleCardClick = () => {
+    // Slugify the game title for URL
+    const slug = slugify(title);
+    // Push to the game details page using the slugified title
+    router.push(`/games/${slug}`);
+  };
 
   return (
     <div
-      className="game-thumbnail relative bg-primary rounded-lg overflow-hidden shadow-lg"
+      className="game-thumbnail relative bg-primary rounded-lg overflow-hidden shadow-lg cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleCardClick}  // Click event to navigate to game page
     >
       {/* Image or YouTube Video Trailer */}
       {!isHovered ? (
@@ -41,7 +51,7 @@ const GameCard: React.FC<GameCardProps> = ({ image, title, description, trailer,
 
       {/* "New" Badge */}
       {isNew && (
-        <span className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
+        <span className="absolute top-2 right-2 bg-secondary text-white text-xs px-2 py-1 rounded">
           New
         </span>
       )}

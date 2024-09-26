@@ -3,15 +3,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Peer from 'simple-peer';
 
-const GameStream: React.FC = () => {
+const RDP: React.FC = () => {
   const [stream, setStream] = useState<MediaStream | null>(null);
   
   const peerRef = useRef<Peer | null>(null); // Correctly typed ref for Peer instance
-  const wsRef = useRef<WebSocket | null>(null);
+ 
   const videoElementRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
-    const ws = new WebSocket('wss://89dd-94-31-68-71.ngrok-free.app')
+    const ws = new WebSocket('wss://9913-94-31-68-71.ngrok-free.app/ws')
 
     const peer = new Peer({ initiator: false, trickle: false });
     peerRef.current = peer;
@@ -234,4 +234,4 @@ const GameStream: React.FC = () => {
   );
 };
 
-export default GameStream;
+export default RDP;
