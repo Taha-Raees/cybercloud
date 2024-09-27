@@ -41,7 +41,13 @@ const GamePage = () => {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto py-12 px-6">
+    <div className="mx-auto py-12 px-6" 
+    style={{
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('${game.backgroundImage}')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed', // Keep the background fixed while scrolling
+    }}>
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="lg:w-2/3 w-full shadow-lg rounded-lg overflow-hidden bg-gradient-to-b from-black to-gray-800">
           <GameHeader
