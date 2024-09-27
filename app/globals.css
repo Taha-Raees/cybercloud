@@ -55,8 +55,11 @@ button {
 
 /* Game Thumbnails */
 .game-thumbnail {
-  @apply w-10/12 h-80 rounded-lg bg-cover bg-center relative overflow-hidden;
+  @apply w-10/12 h-80 bg-cover bg-center relative overflow-hidden;
   transition: all 0.3s ease-in-out;
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(#FF007F,#FCEE09)1
 }
 
 .game-thumbnail:hover {

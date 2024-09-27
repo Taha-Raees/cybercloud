@@ -26,7 +26,7 @@ const Pricing = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Free Plan */}
-          <div className="bg-gradient-to-b from-[#222] to-primary p-8 rounded-lg shadow-xl  text-center hover:scale-105 transition-transform duration-300 hover:shadow-neonYellow">
+          <div className="bg-gradient-to-b from-[#222] to-primary p-8 pb-40 rounded-lg shadow-xl  text-center hover:scale-105 transition-transform duration-300 hover:shadow-neonYellow">
             <h2 className="text-3xl font-semibold text-neonYellow">Free Plan</h2>
             <p className="mt-4 text-lg text-gray-300">Access to light gaming machines</p>
             <p className="text-lg text-gray-300 mb-4">Watch ads to earn minutes</p>

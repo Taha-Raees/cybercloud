@@ -23,7 +23,7 @@ const GameCard: React.FC<GameCardProps> = ({ image, title, description, trailer,
 
   return (
     <div
-      className="game-thumbnail relative bg-primary rounded-lg overflow-hidden shadow-lg cursor-pointer"
+      className="game-thumbnail relative bg-primary border-neonYellow  overflow-hidden shadow-lg cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleCardClick}  // Click event to navigate to game page
