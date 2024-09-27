@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
     { name: 'Home', path: '/' },
     { name: 'Games', path: '/games' },
     { name: 'About', path: '/about' },
-    { name: 'Support', path: '/support' },
+    { name: 'Pricing', path: '/pricing' },
   ];
 
   const authLinks = isLoggedIn

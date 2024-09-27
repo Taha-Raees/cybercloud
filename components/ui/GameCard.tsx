@@ -51,7 +51,7 @@ const GameCard: React.FC<GameCardProps> = ({ image, title, description, trailer,
 
       {/* "New" Badge */}
       {isNew && (
-        <span className="newGame absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
+        <span className="newGame absolute top-2 right-2 bg-black gradient-border-yellow-black text-white text-xs px-2 py-1 rounded">
           New
         </span>
       )}

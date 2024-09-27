@@ -1,9 +1,9 @@
 "use client"
 import CTA from "@/components/Layout/CTA";
 import Features from "@/components/Layout/Features";
-import GameSorting from "@/components/Layout/GameSorting";
 import HeroSection from "@/components/Layout/HeroSection";
 import NewGames from "@/components/Layout/NewGames";
+import PricingSection from "@/components/Layout/PricingSection";
 import Testimonials from "@/components/Layout/Testimonials";
 import TrendingGames from "@/components/Layout/TrendingGames";
 import WhyChooseUs from "@/components/Layout/WhyChooseUs";
@@ -23,10 +23,10 @@ export default function Home() {
         <HeroSection />
         <NewGames/>
         <TrendingGames/>
-        <GameSorting/>
         <WhyChooseUs/>
         <Features />
         <Testimonials/>
+        <PricingSection/>
         <CTA />
       </main>
     </div>
