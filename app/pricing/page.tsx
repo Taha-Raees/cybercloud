@@ -21,7 +21,7 @@ const Pricing = () => {
         {/* Your existing Pricing content */}
         <h1 className="text-center text-5xl font-bold text-accent mb-12">Pricing Plans</h1>
         <p className="text-center text-lg text-gray-300 max-w-3xl mx-auto mb-16">
-          Choose a plan that fits your gaming needs. Whether you want to play for free or go for the ultimate experience with our high-performance VMs, we've got you covered.
+          Choose a plan that fits your gaming needs. Whether you want to play for free or go for the ultimate experience with our high-performance VMs, we&apos;ve got you covered.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
